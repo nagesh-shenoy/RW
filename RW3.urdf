@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="RW3">
+  <!-- main_body -->
+  <link
+    name="main_body">
+    <inertial>
+      <origin
+        xyz="3.52921171579146E-05 -0.00216312490203521 0.0890254442745654"
+        rpy="0 0 0" />
+      <mass
+        value="0.130717283971575" />
+      <inertia
+        ixx="0.000391314375445327"
+        ixy="2.37904771277747E-09"
+        ixz="-1.40338334547974E-06"
+        iyy="0.000397927617700136"
+        iyz="5.12680182172804E-06"
+        izz="4.78679897738407E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RW3/meshes/main_body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RW3/meshes/main_body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <!-- ball_joint1 -->
+  <link
+    name="pitch">
+    <inertial>
+      <origin
+        xyz="-0.00624435436376928 9.18922146708745E-09 1.17159176804549E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00992089451454013" />
+      <inertia
+        ixx="5.02475779056058E-07"
+        ixy="1.60535945367459E-12"
+        ixz="4.19913456096686E-13"
+        iyy="1.73618315604786E-06"
+        iyz="1.58003256573087E-12"
+        izz="1.73618258157193E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RW3/meshes/pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://RW3/meshes/pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <!-- pitch -->
+  <joint
+    name="pitch"
+    type="revolute">
+    <origin
+      xyz="0 -0.0025 0.1565"
+      rpy="0.2618 1.5708 0" />
+    <parent
+      link="main_body" />
+    <child
+      link="pitch" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.69813"
+      upper="-0.69813"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <!-- yaw -->
+  <joint
+    name="yaw"
+    type="revolute">
+    <origin
+      xyz="0 -0.0025 0.1565"
+      rpy="0.2618 1.5708 0" />
+    <parent
+      link="main_body" />
+    <child
+      link="pitch" />
+    <axis
+      xyz="0 -0.70548 0.70873" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <!-- roll -->
+  <joint
+    name="roll"
+    type="revolute">
+    <origin
+      xyz="0 -0.0025 0.1565"
+      rpy="0.2618 1.5708 0" />
+    <parent
+      link="main_body" />
+    <child
+      link="pitch" />
+    <axis
+      xyz="0 -0.70873 -0.70548" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
